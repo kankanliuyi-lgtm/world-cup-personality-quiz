@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 
 const dimensions = ["attack", "social", "decision", "pressure"];
+const playerImageUrl = `${import.meta.env.BASE_URL}assets/player-blank.png`;
 
 const dimensionMeta = {
   attack: {
@@ -408,7 +409,7 @@ function Landing({ onStart }) {
           <p className="privacy-note">无需登录 · 不收集个人信息 · 结果可保存</p>
         </div>
         <div className="hero-art" aria-hidden="true">
-          <img src="/assets/player-blank.png" alt="" />
+          <img src={playerImageUrl} alt="" />
           <span className="hero-jersey-number">10</span>
           <span className="hero-number">10</span>
           <span className="hero-tag">FIND YOUR PLAY STYLE</span>
@@ -544,7 +545,7 @@ function Result({ result, profile, subtype, typeCode, onRestart, onHome }) {
     canvas.height = height;
 
     const image = new Image();
-    image.src = "/assets/player-blank.png";
+    image.src = playerImageUrl;
     await image.decode();
 
     ctx.fillStyle = "#080a0d";
@@ -667,7 +668,7 @@ function Result({ result, profile, subtype, typeCode, onRestart, onHome }) {
             <span>RARITY {result.rarity}</span>
           </div>
           <div className="card-art">
-            <img src="/assets/player-blank.png" alt="原创匿名足球运动员插画" />
+            <img src={playerImageUrl} alt="原创匿名足球运动员插画" />
             <span className="card-jersey-number">{result.number}</span>
             <span className="card-position">{result.position}</span>
             <span className="card-number">{result.number}</span>
